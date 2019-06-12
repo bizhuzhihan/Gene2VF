@@ -6,14 +6,13 @@ import numpy as np
 import re
 from urllib import request
 import subprocess
+import xlrd
 
 # Genes
 path = "/Users/zhuzhihan/Desktop/AMR/data/genes.xlsx"
 profile = pd.read_excel(path)
 
 # VFDB
-import xlrd
-
 VFs = xlrd.open_workbook("/Users/zhuzhihan/Downloads/VFs.xls", formatting_info=True)
 vf = VFs.sheet_by_index(0)
 vf_name = []
@@ -31,8 +30,6 @@ for row in range(2, 576):
     fun.append(rowValues[5])
     key.append(rowValues[7])
     bacteria.append(rowValues[2])
-from urllib import request
-import re
 
 html = []
 
